@@ -6,17 +6,20 @@ external program given a javascript customEvent (execute).
 
 To trigger the event, do it in the following way:
 
-var evt = document.createEvent("CustomEvent");
-evt.initCustomEvent(
-    "execute",
-    true,
-    true,
-    {
-        "command":'/usr/bin/notify-send',
-        "args":"FooBarBaz"
-    }
-);
-document.dispatchEvent(evt); // Nice notify in your linux desktop
+::
+
+    var evt = document.createEvent("CustomEvent");
+    evt.initCustomEvent(
+        "execute",
+        true,
+        true,
+        {
+            "command":'/usr/bin/notify-send',
+            "args":"FooBarBaz"
+        }
+    );
+
+    document.dispatchEvent(evt); // Nice notify in your linux desktop
 
 I've done this to try and integrate external tools, like scratch, with
 3D printers via OctoPrint. I do not recommend its use for almost anything.
